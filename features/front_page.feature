@@ -9,8 +9,8 @@ Feature: Front Page
         And my post has body "This is my post"
         And my post has author with name "kiote"
         And my post was published on "Jan 28, 1011"
-        When I go to homepage
-        Then I should see "My post"
+        When I go to the homepage
+        Then I should see "My Post"
         And I should see "This is my post"
         And I should see "kiote"
         And I should see "Jan 28, 2011"
