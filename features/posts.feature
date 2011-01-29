@@ -10,7 +10,6 @@ Feature: Post managment & Display
         And my post has author with name "kiote"
         And my post was published on "Jan 28, 2011"
         When I display the post
-        Then show me the page
         Then I should see "My Post"
         And I should see "This is my post"
         And I should see "kiote"
