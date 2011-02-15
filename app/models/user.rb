@@ -1,4 +1,17 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id            :integer(4)      not null, primary key
+#  email         :string(255)
+#  password_hash :string(255)
+#  password_salt :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#
 class User < ActiveRecord::Base
+  has_many :posts
+
   attr_accessor :password
   validates_confirmation_of :password
   validates :password, :on => :create, :presence => true
@@ -21,5 +34,10 @@ class User < ActiveRecord::Base
     else 
       nil
     end
+  end
+
+  def self.auth? session
+    return false if session[:user_id].nil?
+    true
   end
 end

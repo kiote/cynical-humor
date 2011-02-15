@@ -16,6 +16,8 @@ gem 'rspec-rails'
 gem 'spork'
 gem 'launchy'
 
+gem 'annotate'
+
 gem 'bcrypt-ruby', :require => 'bcrypt' 
 
 # Use unicorn as the web server

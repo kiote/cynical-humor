@@ -1,12 +1,8 @@
 CynicalHumor::Application.routes.draw do  
   resources :users
+  resources :posts
 
-  get "posts/index"
-  get "post/:id" => "posts#show"
-  get "posts/create" => "posts#create"
-  post "posts/create" => "posts#create"
-
-  root :to => "sessions#new"
+  root :to => "posts#index"
 
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
