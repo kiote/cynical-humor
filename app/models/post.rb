@@ -1,7 +1,3 @@
-class Post < ActiveRecord::Base
-  belongs_to :user
-end
-
 # == Schema Information
 #
 # Table name: posts
@@ -13,4 +9,8 @@ end
 #  created_at :datetime
 #  updated_at :datetime
 #
+class Post < ActiveRecord::Base
+  belongs_to :user
 
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+end

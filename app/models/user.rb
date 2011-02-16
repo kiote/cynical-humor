@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
 
   before_save :encrypt_password
 
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+
   def encrypt_password
     if password.present?
       self.password_salt = BCrypt::Engine.generate_salt

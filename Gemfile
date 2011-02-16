@@ -15,7 +15,7 @@ gem 'cucumber'
 gem 'rspec-rails'
 gem 'spork'
 gem 'launchy'
-
+gem 'paperclip'
 gem 'annotate'
 
 gem 'bcrypt-ruby', :require => 'bcrypt' 
