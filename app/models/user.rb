@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   has_many :posts
 
   attr_accessor :password
+
   validates_confirmation_of :password
   validates :password, :on => :create, :presence => true
   validates :email, :presence => true
@@ -21,6 +22,20 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "32x32>" }
+
+  def confirm
+    #hmmm...
+  end
+
+  def confirm=(confirm)
+    if confirm != 'iknowthiscode'
+      @confirm_invalid = true
+    end
+  end
+
+  def validate
+    errors.add(:confirm, "is invalid") if @confirm_invalid
+  end
 
   def encrypt_password
     if password.present?

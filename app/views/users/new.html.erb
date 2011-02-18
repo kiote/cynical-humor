@@ -26,5 +26,9 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </p>
+  <p>
+    <%=  label(:user, :confirm, "Строка для проверки") %><br />
+    <%=  text_field(:user, :confirm) %>
+  </p>
   <p class="button"><%= f.submit %></p>
 <% end %>
