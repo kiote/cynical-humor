@@ -1,27 +1,20 @@
-<h2>Listing posts</h2>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.body %></td>
-    <td><%= post.user %></td>
-    <td><% if auth? %><%= link_to 'Show', post %><% end %></td>
-    <td><% if auth? %><%= link_to 'Edit', edit_post_path(post) %><% end %></td>
-    <td><% if auth? %><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %><% end %></td>
-  </tr>
+  <h3><%= link_to post.title, post_path(post) %></h3>
+  <hr/>
+  <p>
+    <%= image_tag post.image.url %>
+  </p>
+  <p>
+    <%= post.body %>
+  </p>
+  <h6><%= image_tag post.user.avatar :thumb %></h6>
+  <p>
+    <% if auth? %><%= link_to 'Редактировать', edit_post_path(post) %><% end %>
+    <% if auth? %><%= link_to 'Удавить', post, :confirm => 'Точно?', :method => :delete %><% end %>
+  </p>
+  <hr />
 <% end %>
-</table>
 
 <br />
 
-<% if auth? %><%= link_to 'New Post', new_post_path %><% end %>
+<% if auth? %><%= link_to 'Создать', new_post_path %><% end %>

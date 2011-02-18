@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
 
   before_save :encrypt_password
 
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "32x32>" }
 
   def encrypt_password
     if password.present?

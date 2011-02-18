@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Auth</title>
-      <%= stylesheet_link_tag "blueprint/screen", "blueprint/plugins/fancy-type/screen" %>
-      <%= javascript_include_tag :defaults %>
-      <%= csrf_meta_tag %>
+    <title><%= title %> Циничный юмор</title>
+    <%= stylesheet_link_tag "blueprint/screen", "blueprint/plugins/fancy-type/screen", "main" %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
   </head>
   <body>
     <div class="container">
-      <h1>Циничный юмор - 3xtr.ru</h1>
+      <h1 class="clear"><%= link_to 'Циничный юмор на nifiga.com', root_path %></h1>
       <hr />
       <h2 class="alt">Мы отбираем самые циничные шутки, каждый день.</h2>
       <hr />

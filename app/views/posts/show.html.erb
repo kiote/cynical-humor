@@ -1,20 +1,11 @@
 <p id="notice"><%= notice %></p>
-
+<h2><%= @post.title %></h2>
+<hr />
+<p><%= image_tag @post.image.url %> </p>
+<p><%= @post.body %></p>
 <p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%= @post.body %>
-</p>
-
-<p>
-  <b>User:</b>
   <%= image_tag @post.user.avatar.url :thumb %>
 </p>
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<p>
+  <%if auth?%><%= link_to 'Edit', edit_post_path(@post) %><% end %>
+</p>
