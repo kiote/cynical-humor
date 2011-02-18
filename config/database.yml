@@ -22,6 +22,8 @@ test: &test
 production:
   adapter: mysql
   database: cynical
+  username: cynical_rw
+  password: VnZIpah6e23sZCLN
   pool: 5
   timeout: 5000
 
