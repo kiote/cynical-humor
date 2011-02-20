@@ -2,7 +2,7 @@
   <h3><%= link_to post.title, post_path(post) %></h3>
   <hr/>
   <p>
-    <% if !post.image.nil? %>
+    <% if post.image.file? %>
       <%= image_tag post.image.url %>
     <% end %>
   </p>
