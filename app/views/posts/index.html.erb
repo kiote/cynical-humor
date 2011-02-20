@@ -2,12 +2,16 @@
   <h3><%= link_to post.title, post_path(post) %></h3>
   <hr/>
   <p>
-    <%= image_tag post.image.url %>
+    <% if post.image.nil? %>
+      <%= image_tag post.image.url %>
+    <% end %>
   </p>
   <p>
-    <%= post.body %>
+    <%= raw post.body %>
   </p>
-  <h6><%= image_tag post.user.avatar :thumb %></h6>
+  <% if post.image.nil? %>
+    <h6><%= image_tag post.user.avatar :thumb %></h6>
+  <% end %>
   <p>
     <% if auth? %><%= link_to 'Редактировать', edit_post_path(post) %><% end %>
     <% if auth? %><%= link_to 'Удавить', post, :confirm => 'Точно?', :method => :delete %><% end %>
