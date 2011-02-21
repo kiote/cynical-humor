@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_filter :log_in?, :except => [:show, :index]
+
   def index
     @posts = Post.all
   end
@@ -8,7 +10,6 @@ class PostsController < ApplicationController
   end
 
   def new
-    log_in?
     @post = Post.new
   end
 
@@ -17,7 +18,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    log_in?
     @user = current_user
     @post = @user.posts.new(params[:post])
 
@@ -29,9 +29,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    log_in?
     @post = Post.find(params[:id])
-
     if @post.update_attributes(params[:post])
       redirect_to(@post, :notice => 'Post was successfully updated.')
     else
@@ -40,7 +38,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-#    auth?
     @post = Post.find(params[:id])
     @post.destroy
 

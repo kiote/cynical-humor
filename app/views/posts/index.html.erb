@@ -9,7 +9,7 @@
   <p>
     <%= raw post.body %>
   </p>
-  <% if post.image.nil? %>
+  <% if post.user.avatar.file? %>
     <h6><%= image_tag post.user.avatar :thumb %></h6>
   <% end %>
   <p>

@@ -1,8 +1,5 @@
-require "spec_helper"
-
 describe PostsController do
   describe "routing" do
-
     it "recognizes and generates #index" do
       { :get => "/posts" }.should route_to(:controller => "posts", :action => "index")
     end
@@ -30,6 +27,5 @@ describe PostsController do
     it "recognizes and generates #destroy" do
       { :delete => "/posts/1" }.should route_to(:controller => "posts", :action => "destroy", :id => "1")
     end
-
   end
 end

@@ -5,3 +5,4 @@ tmp/**/*
 *.lock
 nbproject
 public/system/*
+spec/ruby/*

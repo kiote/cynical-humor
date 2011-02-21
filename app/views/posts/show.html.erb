@@ -1,11 +1,15 @@
 <p id="notice"><%= notice %></p>
 <h2><%= @post.title %></h2>
 <hr />
-<p><%= image_tag @post.image.url %> </p>
-<p><%= @post.body %></p>
+<% if @post.image.file? %>
+  <p><%= image_tag @post.image.url %> </p>
+<% end %>
+<p><%= raw @post.body %></p>
+<% if @post.user.avatar.file? %>
 <p>
   <%= image_tag @post.user.avatar.url :thumb %>
 </p>
+<% end %>
 <p>
   <%if auth?%><%= link_to 'Edit', edit_post_path(@post) %><% end %>
 </p>
