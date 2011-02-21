@@ -12,6 +12,13 @@
   <% if post.user.avatar.file? %>
     <h6><%= image_tag post.user.avatar :thumb %></h6>
   <% end %>
+
+  <% unless post.tag_list.empty? %>
+	<p class="tags">
+  	<b>Теги:</b>
+  	<%= post.tag_list %>
+	</p>
+<% end %>
   <p>
     <% if auth? %><%= link_to 'Редактировать', edit_post_path(post) %><% end %>
     <% if auth? %><%= link_to 'Удавить', post, :confirm => 'Точно?', :method => :delete %><% end %>

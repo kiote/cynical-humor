@@ -16,4 +16,6 @@ class Post < ActiveRecord::Base
       :medium => "300x300>", :thumb => "100x100>" }
 
   default_scope :order => 'id DESC'
+
+  acts_as_taggable
 end

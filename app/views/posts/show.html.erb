@@ -10,6 +10,14 @@
   <%= image_tag @post.user.avatar.url :thumb %>
 </p>
 <% end %>
+
+<% unless @post.tag_list.empty? %>
+	<p class="tags">
+  	<b>Теги:</b>
+  	<%= @post.tag_list %>
+	</p>
+<% end %>
+
 <p>
   <%if auth?%><%= link_to 'Edit', edit_post_path(@post) %><% end %>
 </p>

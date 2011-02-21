@@ -17,7 +17,7 @@ gem 'spork'
 gem 'launchy'
 gem 'paperclip'
 gem 'annotate'
-
+gem 'acts-as-taggable-on'
 gem 'bcrypt-ruby', :require => 'bcrypt' 
 
 # Use unicorn as the web server
