@@ -11,6 +11,8 @@
 #
 class Post < ActiveRecord::Base
   belongs_to :user
+  
+  validates_presence_of :title, :title_url
 
   has_attached_file :image, :styles => { :big => "600x600>", \
       :medium => "300x300>", :thumb => "100x100>" }
@@ -18,4 +20,8 @@ class Post < ActiveRecord::Base
   default_scope :order => 'id DESC'
 
   acts_as_taggable
+
+  def to_param
+    "#{id}-#{title_url}"
+  end
 end
