@@ -8,6 +8,9 @@ xml.rss :version => "2.0" do
     for post in @posts
       xml.item do
         xml.title post.title
+        if post.image.file?
+          xml.media(:content, post.image.url)
+        end
         xml.description post.body
         xml.link post_url(post)
         xml.guid post_url(post)
