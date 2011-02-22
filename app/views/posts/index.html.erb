@@ -7,8 +7,12 @@
     <% end %>
   </p>
   <p>
-    <%= raw truncate(post.body, :separator => '[---MORE---]',  \
-        :omission => link_to('Продолжение...', post_path(post))) %>
+    <% if !post.body.index('[---MORE---]').nil? %>
+      <%= simple_format truncate(post.body, :separator => '[---MORE---]',  \
+          :omission => link_to('Продолжение...', post_path(post))) %>
+    <% else %>
+      <%= simple_format post.body %>
+    <% end %>
   </p>
   <% if post.user.avatar.file? %>
     <h6><%= image_tag post.user.avatar :thumb %></h6>
