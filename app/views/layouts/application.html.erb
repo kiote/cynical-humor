@@ -5,6 +5,7 @@
     <%= stylesheet_link_tag "blueprint/screen", "blueprint/plugins/fancy-type/screen", "main" %>
     <%= javascript_include_tag :defaults %>
     <%= csrf_meta_tag %>
+    <script src="http://vkontakte.ru/js/api/openapi.js" type="text/javascript" charset="windows-1251"></script>
     <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -17,6 +18,9 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
+</script>
+    <script type="text/javascript">
+  VK.init({apiId: 2181491, onlyWidgets: true});
 </script>
   </head>
   <body>

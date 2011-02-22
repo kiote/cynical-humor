@@ -18,6 +18,11 @@
 	</p>
 <% end %>
 
+<div id="vk_like"></div>
+<script type="text/javascript">
+VK.Widgets.Like("vk_like", {type: "full"});
+</script>
+
 <p>
   <%if auth?%><%= link_to 'Edit', edit_post_path(@post) %><% end %>
 </p>
