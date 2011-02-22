@@ -7,7 +7,7 @@
     <% end %>
   </p>
   <p>
-    <%= raw truncate(post.body, :separator => '[---MORE---]', :length => 0, \
+    <%= raw truncate(post.body, :separator => '[---MORE---]',  \
         :omission => link_to('Продолжение...', post_path(post))) %>
   </p>
   <% if post.user.avatar.file? %>
