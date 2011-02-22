@@ -22,7 +22,7 @@
     <script type="text/javascript">
       VK.init({apiId: 2181491, onlyWidgets: true});
     </script>
-    <%=  auto_discovery_link_tag(:rss, {:controller => "posts", :action => "index"}) %>
+    <link href="<%= url_for posts_path %>.rss" rel="alternate" title="RSS" type="application/rss+xml" />
   </head>
   <body>
     <div class="container">
