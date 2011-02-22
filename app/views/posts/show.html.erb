@@ -23,6 +23,11 @@
 VK.Widgets.Like("vk_like", {type: "full"});
 </script>
 
+<div id="vk_comments"></div>
+<script type="text/javascript">
+VK.Widgets.Comments("vk_comments", {limit: 10, width: "496", attach: "*"});
+</script>
+
 <p>
   <%if auth?%><%= link_to 'Edit', edit_post_path(@post) %><% end %>
 </p>
