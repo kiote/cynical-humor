@@ -8,10 +8,12 @@ xml.rss :version => "2.0" do
     for post in @posts
       xml.item do
         xml.title post.title
-        if post.image.file?
-          xml.media(:content, :url => 'http://nifiga.com' + post.image.url, :type => post.image.content_type)
+        xml.description do
+          if post.image.file?
+            xml.cdata! raw image_tag post.image.url :big
+          end
+          post.body
         end
-        xml.description post.body
         xml.link post_url(post)
         xml.guid post_url(post)
       end
