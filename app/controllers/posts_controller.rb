@@ -31,8 +31,6 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-#    params[:post].delete(:tags)
-#    @post.tag_list = params[:post][:tags]
     if @post.update_attributes(params[:post])
       redirect_to(@post, :notice => 'Post was successfully updated.')
     else
