@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :log_in?, :except => [:show, :index]
 
   def index
-    @posts = Post.all.paginate :page => params[:page]
+    @posts = Post.all.paginate :page => params[:page], :per_page => 10
 
     respond_to do |format|
       format.html
