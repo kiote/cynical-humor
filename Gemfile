@@ -18,7 +18,8 @@ gem 'launchy'
 gem 'paperclip'
 gem 'annotate'
 gem 'acts-as-taggable-on'
-gem 'bcrypt-ruby', :require => 'bcrypt' 
+gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'will_paginate'
 
 # Use unicorn as the web server
 # gem 'unicorn'

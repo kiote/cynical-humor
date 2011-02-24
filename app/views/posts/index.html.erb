@@ -34,3 +34,4 @@
 <br />
 
 <% if auth? %><%= link_to 'Создать', new_post_path %><% end %>
+<%= will_paginate @posts %>
