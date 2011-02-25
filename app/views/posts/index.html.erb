@@ -21,7 +21,9 @@
   <% unless post.tag_list.empty? %>
 	<p class="tags">
   	<b>Теги:</b>
-  	<%= post.tag_list %>
+  	<% post.tags.each do |tag| %>
+          <%= link_to tag, tag_posts_path + '?tag=' + tag.to_s %>
+        <% end %>
 	</p>
 <% end %>
   <p>

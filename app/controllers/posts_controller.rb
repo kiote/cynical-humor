@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :log_in?, :except => [:show, :index]
+  before_filter :log_in?, :except => [:show, :index, :tag]
 
   def index
     @posts = Post.all
@@ -8,6 +8,12 @@ class PostsController < ApplicationController
       format.html
       format.rss { render :layout => false } #index.rss.builder
     end
+  end
+
+  def tag
+    @posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page], \
+        :per_page => 20)
+    render "index"
   end
 
   def show

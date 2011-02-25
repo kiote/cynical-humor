@@ -1,6 +1,10 @@
 CynicalHumor::Application.routes.draw do  
   resources :users
-  resources :posts
+  resources :posts do
+    collection do
+      get 'tag'
+    end
+  end
   resources :sessions
 
   get "log_in" => "sessions#new", :as => "log_in"
