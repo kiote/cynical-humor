@@ -14,6 +14,9 @@ class Post < ActiveRecord::Base
   
   validates_presence_of :title, :title_url
 
+  cattr_reader :per_page
+  @@per_page = 10
+
   has_attached_file :image, :styles => { :big => "600x600>", \
       :medium => "300x300>", :thumb => "100x100>" }
 

@@ -14,7 +14,11 @@ gem 'paperclip'
 
 gem 'acts-as-taggable-on'
 gem 'bcrypt-ruby', :require => 'bcrypt'
+<<<<<<< HEAD
 gem "will_paginate", "~> 3.0.pre2"
+=======
+gem 'will_paginate'
+>>>>>>> 5b489995e3d2a82b479ae699363845ca59b9ad4e
 
 # Use unicorn as the web server
 # gem 'unicorn'
