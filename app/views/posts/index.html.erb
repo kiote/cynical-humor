@@ -17,7 +17,7 @@
 	<p class="tags">
   	<b>Теги:</b>
   	<% post.tags.each do |tag| %>
-          <%= link_to tag, tag_posts_path + '?tag=' + tag.to_s %>
+          <%= link_to tag, tagged_posts_path + '?tag=' + tag.to_s %>
         <% end %>
 	</p>
 <% end %>

@@ -2,7 +2,7 @@ CynicalHumor::Application.routes.draw do
   resources :users
   resources :posts do
     collection do
-      get 'tag'
+      get 'tagged'
     end
   end
   resources :sessions

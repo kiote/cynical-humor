@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :log_in?, :except => [:show, :index, :tag]
+  before_filter :log_in?, :except => [:show, :index, :tagged]
 
   def index
     @posts = Post.all.paginate :page => params[:page], :per_page => 10
@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def tag
+  def tagged
     @posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page], \
         :per_page => 20)
     render "index"
