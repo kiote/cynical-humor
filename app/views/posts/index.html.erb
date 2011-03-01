@@ -20,7 +20,7 @@
           <%= link_to tag, tagged_posts_path + '?tag=' + tag.to_s %>
         <% end %>
 	</p>
-<% end %>
+  <% end %>
   <p>
     <% if auth? %><%= link_to 'Редактировать', edit_post_path(post) %><% end %>
     <% if auth? %><%= link_to 'Удавить', post, :confirm => 'Точно?', :method => :delete %><% end %>

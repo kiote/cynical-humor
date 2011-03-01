@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   def tagged
     @posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page], \
-        :per_page => 20)
+        :per_page => 10)
     render "index"
   end
 
