@@ -2,7 +2,7 @@
 <h2><%= @post.title %></h2>
 <hr />
 <% if @post.image.file? %>
-  <p><%= image_tag @post.image.url :big%> </p>
+  <p><%= my_image_tag @post.image %></p>
 <% end %>
 <p><%= smart_post_body @post, :cut => false%></p>
 <% if @post.user.avatar.file? %>

@@ -1,6 +1,12 @@
 module PostsHelper
   include ActsAsTaggableOn::TagsHelper
 
+  # do not resize animated gif
+  def my_image_tag image
+    return image_tag image.url :big unless image.content_type == 'image/gif'
+    image_tag image.url
+  end
+
   def smart_post_body post, params
     str = post.body
     
