@@ -10,7 +10,7 @@ module ApplicationHelper
     code = '<div id="vk_like"></div>
         <script type="text/javascript">
         VK.Widgets.Like("vk_like", {type: "full"});
-        </script>'
+        </script><br /><hr />'
 
     return code if current_page? root_url
     ''

@@ -1,4 +1,6 @@
 module PostsHelper
+  include ActsAsTaggableOn::TagsHelper
+
   def smart_post_body post, params
     str = post.body
     
@@ -15,6 +17,5 @@ module PostsHelper
     else
       return simple_format str
     end
-
   end
 end

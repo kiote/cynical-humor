@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter :tag_cloud
+
   helper_method :current_user, :auth?
 
   def auth?
@@ -10,6 +12,10 @@ class ApplicationController < ActionController::Base
 
   def log_in?
     redirect_to log_in_url if not auth?
+  end
+
+  def tag_cloud
+    @tags = Post.tag_counts_on(:tags)
   end
 
   private
