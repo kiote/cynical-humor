@@ -21,9 +21,6 @@ class Post < ActiveRecord::Base
 
   before_post_process :resize_images
 
-  validates_attachment_content_type :image, :content_type => ['image/gif', \
-       'image/png', 'image/jpg']
-
   def resize_images
       return false unless image.content_type =~ %r{^(image|(x-)?\application)/(x-png|pjpeg|jpeg|jpg|png|gif)$}
   end
