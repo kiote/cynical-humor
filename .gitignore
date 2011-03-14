@@ -6,3 +6,4 @@ tmp/**/*
 nbproject
 public/system/*
 spec/ruby/*
+.idea
