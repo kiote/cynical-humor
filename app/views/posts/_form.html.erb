@@ -33,6 +33,13 @@
   <%= f.text_field :tag_list %>
 </div>
 
+<% f.fields_for :attachments do |att_from| %>
+  <div class="field">
+    <%= att_from.label :attachment %>
+    <%= att_from.file_field :attachment %>
+  </div>
+<% end %>
+
 <div class="actions">
   <%= f.submit %>
 </div>

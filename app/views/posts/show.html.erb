@@ -11,6 +11,16 @@
 </p>
 <% end %>
 
+<% unless @post.attachments.empty? %>
+  <% @post.attachments.each do |attach| %>
+    <% if attach.attachment.file? %>
+      <p>
+        <%= image_tag attach.attachment.url :big %>
+      </p>
+    <% end %>
+  <% end %>
+<% end %>
+
 <% unless @post.tag_list.empty? %>
 	<p class="tags">
   	<b>Теги:</b>

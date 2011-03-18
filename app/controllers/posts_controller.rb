@@ -23,6 +23,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.attachments[0] = Attachment.new
   end
 
   def edit
